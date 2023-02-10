@@ -25,7 +25,7 @@ android {
 
     defaultConfig {
         applicationId "com.mvvm.sharednotes"
-        minSdk 21
+        minSdk 24
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -46,13 +46,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
+
     implementation libs.core.ktx
-    implementation libs.androidx.appcompat
     implementation libs.material
+    implementation libs.androidx.appcompat
     implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
 
     testImplementation testLibs.junit
     androidTestImplementation testLibs.androidx.junit.ext
