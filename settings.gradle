@@ -1,0 +1,33 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            library('core-ktx', 'androidx.core:core-ktx:1.9.0')
+            library('androidx-appcompat', 'androidx.appcompat:appcompat:1.5.1')
+            library('material', 'com.google.android.material:material:1.8.0')
+            library('androidx-constraintlayout', 'androidx.constraintlayout:constraintlayout:2.1.4')
+            library('androidx-navigation-fragment-ktx', 'androidx.navigation:navigation-fragment-ktx:2.5.3')
+            library('androidx-navigation-ui-ktx', 'androidx.navigation:navigation-ui-ktx:2.5.3')
+        }
+        testLibs {
+            library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0')
+
+            library('junit', 'junit:junit:4.13.2')
+            library('androidx-junit-ext', 'androidx.test.ext:junit:1.1.5')
+            library('androidx-espresso-core', 'androidx.test.espresso:espresso-core:3.5.1')
+        }
+    }
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Shared Notes"
+include ':app'
