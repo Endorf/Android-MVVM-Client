@@ -2,7 +2,6 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
-    id 'io.realm.kotlin'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
@@ -23,16 +22,12 @@ detekt {
     baseline = file("$project.rootDir/.detekt/detekt-baseline.xml")
 }
 
-kapt {
-    correctErrorTypes true
-}
-
 hilt {
     enableAggregatingTask = true
 }
 
 android {
-    namespace 'com.mvvm.sharednotes.storage'
+    namespace 'com.mvvm.sharednotes.login'
     compileSdk 33
 
     defaultConfig {
@@ -41,9 +36,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        buildConfigField("long", "DB_VERSION", "2")
-        buildConfigField("String", "DB_NAME", "\"Database.realm.sharednotes\"")
     }
 
     buildTypes {
@@ -59,21 +51,32 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
+
+    //region application modules
+    implementation project(":core:network")
+    implementation project(":core:storage")
+    //endregion
 
     //region Hilt
     implementation libs.hilt
     kapt libs.hilt.compiler
     //endregion
 
-    //region realm
-    implementation storage.kotlinx.coroutines.core
-    implementation storage.realm
-    //endregion
-
     implementation libs.core.ktx
+    implementation libs.material
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment.ktx
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    implementation libs.androidx.lifecycle.livedata.ktx
 
     testImplementation testLibs.junit
     androidTestImplementation testLibs.androidx.junit.ext
