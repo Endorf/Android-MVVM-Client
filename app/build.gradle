@@ -55,6 +55,7 @@ dependencies {
 
     //region application modules
     implementation project(":core:network")
+    implementation project(":core:storage")
     //endregion
 
     implementation libs.core.ktx
