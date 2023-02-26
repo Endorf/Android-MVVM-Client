@@ -7,7 +7,7 @@ pluginManagement {
 }
 dependencyResolutionManagement {
     versionCatalogs {
-        libs {
+         libs {
             library('core-ktx', 'androidx.core:core-ktx:1.9.0')
             library('androidx-appcompat', 'androidx.appcompat:appcompat:1.5.1')
             library('material', 'com.google.android.material:material:1.8.0')
@@ -20,6 +20,10 @@ dependencyResolutionManagement {
             library( 'gson', 'com.google.code.gson:gson:2.10.1')
             library( 'retrofit2', 'com.squareup.retrofit2:retrofit:2.9.0')
             library( 'retrofit2-converter-gson', 'com.squareup.retrofit2:converter-gson:2.9.0')
+        }
+        storage{
+            library('kotlinx-coroutines-core', 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
+            library('realm', 'io.realm.kotlin:library-base:1.6.1')
         }
         testLibs {
             library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0')
@@ -38,3 +42,4 @@ dependencyResolutionManagement {
 rootProject.name = "Shared Notes"
 include ':app'
 include ':core:network'
+include ':core:storage'
