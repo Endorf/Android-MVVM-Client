@@ -53,6 +53,10 @@ android {
 
 dependencies {
 
+    //region application modules
+    implementation project(":core:network")
+    //endregion
+
     implementation libs.core.ktx
     implementation libs.material
     implementation libs.androidx.appcompat

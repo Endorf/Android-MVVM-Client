@@ -6,5 +6,5 @@ interface RemoteUserDataStore {
 
     suspend fun create(value: String?): Result<UserEntity>
 
-    suspend fun read(value: String?): Result<UserEntity>
+    suspend fun read(id: Int): Result<UserEntity>
 }

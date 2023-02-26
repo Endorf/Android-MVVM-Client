@@ -12,6 +12,6 @@ class RemoteUserDataStoreImpl : RemoteUserDataStore {
     override suspend fun create(value: String?): Result<UserEntity> =
         api.runCatching { create(UserEntity(email = value)) }
 
-    override suspend fun read(value: String?): Result<UserEntity> =
-        api.runCatching { get(91) }
+    override suspend fun read(id: Int): Result<UserEntity> =
+        api.runCatching { get(id) }
 }
