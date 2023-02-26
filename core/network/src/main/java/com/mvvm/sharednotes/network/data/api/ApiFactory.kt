@@ -6,6 +6,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
+@Deprecated("Unused because of Hilt")
 class ApiFactory<T>(private val kClass: Class<T>) {
 
     fun create(baseUrl: String): T {
