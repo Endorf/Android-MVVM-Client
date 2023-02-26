@@ -47,3 +47,5 @@ dependencyResolutionManagement {
 rootProject.name = "Shared Notes"
 include ':app'
 include ':core:network'
+include ':core:storage'
+include ':screen:login'
