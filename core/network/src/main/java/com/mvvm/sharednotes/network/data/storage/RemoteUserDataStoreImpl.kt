@@ -1,7 +1,5 @@
 package com.mvvm.sharednotes.network.data.storage
 
-import com.mvvm.sharednotes.network.BuildConfig
-import com.mvvm.sharednotes.network.data.api.ApiFactory
 import com.mvvm.sharednotes.network.data.api.user.UserApi
 import com.mvvm.sharednotes.network.data.api.user.entity.UserEntity
 import javax.inject.Inject

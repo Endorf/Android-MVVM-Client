@@ -34,7 +34,7 @@ class UserRepositoryImpl @Inject constructor(
     }
 
     companion object {
-        //TODO remove mock
+        // TODO remove mock
         private const val MOCK_ID = 1
     }
 }

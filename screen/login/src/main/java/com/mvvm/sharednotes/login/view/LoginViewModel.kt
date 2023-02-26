@@ -1,16 +1,20 @@
 package com.mvvm.sharednotes.login.view
 
 import android.util.Patterns
-import androidx.lifecycle.*
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.mvvm.sharednotes.login.data.exception.EmailNotValidException
 import com.mvvm.sharednotes.login.domain.Interactor
 import com.mvvm.sharednotes.login.view.entity.state.ErrorState
 import com.mvvm.sharednotes.login.view.entity.state.LoginUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 @HiltViewModel
+@Suppress("UnusedPrivateMember")
 class LoginViewModel @Inject constructor(
     private val interactor: Interactor,
     private val bundle: SavedStateHandle
