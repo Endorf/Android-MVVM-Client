@@ -15,6 +15,10 @@ dependencyResolutionManagement {
             library('androidx-navigation-fragment-ktx', 'androidx.navigation:navigation-fragment-ktx:2.5.3')
             library('androidx-navigation-ui-ktx', 'androidx.navigation:navigation-ui-ktx:2.5.3')
         }
+        storage{
+            library('kotlinx-coroutines-core', 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
+            library('realm', 'io.realm.kotlin:library-base:1.6.1')
+        }
         testLibs {
             library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0')
 
@@ -31,3 +35,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Shared Notes"
 include ':app'
+include ':core:storage'
