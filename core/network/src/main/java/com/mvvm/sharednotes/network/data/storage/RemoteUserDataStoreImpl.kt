@@ -4,10 +4,11 @@ import com.mvvm.sharednotes.network.BuildConfig
 import com.mvvm.sharednotes.network.data.api.ApiFactory
 import com.mvvm.sharednotes.network.data.api.user.UserApi
 import com.mvvm.sharednotes.network.data.api.user.entity.UserEntity
+import javax.inject.Inject
 
-class RemoteUserDataStoreImpl : RemoteUserDataStore {
-
-    private val api: UserApi = ApiFactory(UserApi::class.java).create(BuildConfig.BASE_URL)
+class RemoteUserDataStoreImpl @Inject constructor(
+    private val api: UserApi
+) : RemoteUserDataStore {
 
     override suspend fun create(value: String?): Result<UserEntity> =
         api.runCatching { create(UserEntity(email = value)) }
