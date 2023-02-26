@@ -1,6 +1,7 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
     id 'org.jlleitschuh.gradle.ktlint' version '11.0.0'
 }
@@ -20,17 +21,17 @@ detekt {
 }
 
 android {
-    namespace 'com.mvvm.sharednotes'
+    namespace 'com.mvvm.sharednotes.network'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.mvvm.sharednotes"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String", "BASE_URL", "\"${getLocalProperty("BASE_URL")}\"")
     }
 
     buildTypes {
@@ -46,23 +47,16 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
 
-    //region application modules
-    implementation project(":core:network")
-    //endregion
-
     implementation libs.core.ktx
-    implementation libs.material
-    implementation libs.androidx.appcompat
-    implementation libs.androidx.constraintlayout
-    implementation libs.androidx.navigation.fragment.ktx
-    implementation libs.androidx.navigation.ui.ktx
+
+    implementation network.okhttp3.logging.interceptor
+    implementation network.gson
+    implementation network.retrofit2
+    implementation network.retrofit2.converter.gson
 
     testImplementation testLibs.junit
     androidTestImplementation testLibs.androidx.junit.ext
