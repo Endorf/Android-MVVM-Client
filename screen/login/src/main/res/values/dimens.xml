@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="application_margin_default">16dp</dimen>
+    <dimen name="application_side_margin_default">4dp</dimen>
+
+    <dimen name="list_divider_margin">1dp</dimen>
+
+    <dimen name="text_input_layout_side_corners">5dp</dimen>
+
+    <dimen name="login_scr_margin">35dp</dimen>
+    <dimen name="login_status_top_padding">4dp</dimen>
+</resources>
