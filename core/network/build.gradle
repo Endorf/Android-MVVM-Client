@@ -2,6 +2,8 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
     id 'org.jlleitschuh.gradle.ktlint' version '11.0.0'
 }
@@ -18,6 +20,10 @@ detekt {
     parallel = true
     config = files("$project.rootDir/.detekt/config.yml")
     baseline = file("$project.rootDir/.detekt/detekt-baseline.xml")
+}
+
+hilt {
+    enableAggregatingTask = true
 }
 
 android {
@@ -51,12 +57,19 @@ android {
 
 dependencies {
 
-    implementation libs.core.ktx
+    //region Hilt
+    implementation libs.hilt
+    kapt libs.hilt.compiler
+    //endregion
 
+    //region network
     implementation network.okhttp3.logging.interceptor
     implementation network.gson
     implementation network.retrofit2
     implementation network.retrofit2.converter.gson
+    //endregion
+
+    implementation libs.core.ktx
 
     testImplementation testLibs.junit
     androidTestImplementation testLibs.androidx.junit.ext

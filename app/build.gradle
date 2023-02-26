@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
     id 'org.jlleitschuh.gradle.ktlint' version '11.0.0'
 }
@@ -17,6 +19,14 @@ detekt {
     parallel = true
     config = files("$project.rootDir/.detekt/config.yml")
     baseline = file("$project.rootDir/.detekt/detekt-baseline.xml")
+}
+
+kapt {
+    correctErrorTypes true
+}
+
+hilt {
+    enableAggregatingTask = true
 }
 
 android {
@@ -47,15 +57,19 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        viewBinding true
+        dataBinding true
     }
 }
 
 dependencies {
 
     //region application modules
-    implementation project(":core:network")
-    implementation project(":core:storage")
+    implementation project(":screen:login")
+    //endregion
+
+    //region Hilt
+    implementation libs.hilt
+    kapt libs.hilt.compiler
     //endregion
 
     implementation libs.core.ktx
