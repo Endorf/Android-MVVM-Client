@@ -19,7 +19,6 @@ class LoginViewModel @Inject constructor(
     private val interactor: Interactor,
     private val bundle: SavedStateHandle
 ) : ViewModel() {
-
     var userInput: String = ""
 
     val keyBoardVisibilityState: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>() }
