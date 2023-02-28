@@ -3,30 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
-    id 'io.gitlab.arturbosch.detekt' version '1.22.0'
-    id 'org.jlleitschuh.gradle.ktlint' version '11.2.0'
-}
-
-ktlint {
-    android.set(true)
-    outputColorName.set("RED")
-    outputToConsole.set(true)
-    disabledRules = ["final-newline"]
-}
-
-detekt {
-    buildUponDefaultConfig = true
-    parallel = true
-    config = files("$project.rootDir/.detekt/config.yml")
-    baseline = file("$project.rootDir/.detekt/detekt-baseline.xml")
-}
-
-kapt {
-    correctErrorTypes true
-}
-
-hilt {
-    enableAggregatingTask = true
 }
 
 android {
@@ -61,10 +37,18 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true
+}
+
+hilt {
+    enableAggregatingTask = true
+}
+
 dependencies {
 
     //region application modules
-    implementation project(":screen:login")
+    implementation projects.screen.login
     //endregion
 
     //region Hilt
