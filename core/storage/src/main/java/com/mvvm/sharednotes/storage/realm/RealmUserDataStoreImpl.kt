@@ -20,6 +20,8 @@ class RealmUserDataStoreImpl @Inject constructor(
 
     override suspend fun read(value: User): Result<User?> = realm
         .query(
-            UserEntity::class, "email == $0", "${value.email}"
+            UserEntity::class,
+            "email == $0",
+            "${value.email}"
         ).first().find()?.toUser().asResult()
 }

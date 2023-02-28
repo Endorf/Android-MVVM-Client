@@ -20,7 +20,6 @@ class RoutingActivity : AppCompatActivity() {
     private val viewModel: RoutingActivityViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 
@@ -30,9 +29,8 @@ class RoutingActivity : AppCompatActivity() {
         viewModel.retrieveUser()
 
         viewModel.isUserSignedIn.observe(this) { isUserSignedIn ->
-            if (isUserSignedIn) {
-                TODO("implement notes module")
-            } else findNavController(R.id.nav_host_fragment_content_main)
+            if (isUserSignedIn) TODO("implement notes module")
+            else findNavController(R.id.nav_host_fragment_content_main)
 
             splashScreen.setKeepOnScreenCondition { false }
         }

@@ -8,5 +8,5 @@ data class UserEntity(
     val id: Int? = null,
     var email: String? = null,
     val name: String? = null,
-    val userName: String? = null,
+    val userName: String? = null
 ) : Parcelable

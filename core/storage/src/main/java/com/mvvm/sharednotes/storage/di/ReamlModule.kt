@@ -22,10 +22,7 @@ object ReamlModule {
     @Singleton
     @Provides
     fun provideRealmConfig() = RealmConfiguration.Builder(
-        setOf(
-            UserEntity::class, AddressEntity::class,
-            PostEntity::class
-        )
+        setOf(UserEntity::class, AddressEntity::class, PostEntity::class)
     )
         .name(BuildConfig.DB_NAME)
         .schemaVersion(BuildConfig.DB_VERSION)
