@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="DefaultTextInputLayout">
+        <item name="boxCornerRadiusBottomEnd">@dimen/text_input_layout_side_corners</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/text_input_layout_side_corners</item>
+        <item name="boxCornerRadiusTopStart">@dimen/text_input_layout_side_corners</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/text_input_layout_side_corners</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="boxBackgroundColor">@color/bg_text_input_layout_color</item>
+    </style>
+
+    <style name="DefaultEmailEditText">
+        <item name="android:hint">@string/login_email_field_hint</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="DefaultButton">
+        <item name="android:padding">@dimen/application_margin_default</item>
+    </style>
+</resources>
