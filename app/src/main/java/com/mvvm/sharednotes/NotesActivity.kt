@@ -14,7 +14,6 @@ class NotesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityNotesListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
 

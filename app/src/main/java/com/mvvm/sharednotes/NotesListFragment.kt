@@ -18,7 +18,6 @@ class NotesListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentNotesListBinding.inflate(inflater, container, false)
         return binding.root
     }
