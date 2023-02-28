@@ -35,7 +35,6 @@ class LoginViewModel @Inject constructor(
         }
 
         if (validationStatus) viewModelScope.launch {
-
             inProgressState.value = true
             val result = interactor.login(userInput)
             when {
