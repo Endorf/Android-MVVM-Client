@@ -5,7 +5,7 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.dagger.hilt.android'
     id 'io.gitlab.arturbosch.detekt' version '1.22.0'
-    id 'org.jlleitschuh.gradle.ktlint' version '11.2.0'
+    id 'org.jlleitschuh.gradle.ktlint' version '11.0.0'
 }
 
 ktlint {
@@ -27,7 +27,7 @@ hilt {
 }
 
 android {
-    namespace 'com.mvvm.sharednotes.network'
+    namespace 'com.mvvm.sharednotes.login'
     compileSdk 33
 
     defaultConfig {
@@ -36,8 +36,6 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
-        buildConfigField("String", "BASE_URL", "\"${getLocalProperty("BASE_URL")}\"")
     }
 
     buildTypes {
@@ -53,23 +51,32 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding true
+    }
 }
 
 dependencies {
+
+    //region application modules
+    implementation project(":core:network")
+    implementation project(":core:storage")
+    //endregion
 
     //region Hilt
     implementation libs.hilt
     kapt libs.hilt.compiler
     //endregion
 
-    //region network
-    implementation network.okhttp3.logging.interceptor
-    implementation network.gson
-    implementation network.retrofit2
-    implementation network.retrofit2.converter.gson
-    //endregion
-
     implementation libs.core.ktx
+    implementation libs.material
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.fragment.ktx
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+
+    implementation libs.androidx.lifecycle.livedata.ktx
 
     testImplementation testLibs.junit
     androidTestImplementation testLibs.androidx.junit.ext

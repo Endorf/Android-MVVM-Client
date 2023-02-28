@@ -7,6 +7,7 @@ import com.mvvm.sharednotes.storage.realm.entity.db.UserEntity
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
 
+@Deprecated("Unused because of Hilt")
 interface RealmDB {
 
     companion object {
