@@ -28,7 +28,7 @@ dependencyResolutionManagement {
         }
         storage {
             library('kotlinx-coroutines-core', 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
-            library('realm', 'io.realm.kotlin:library-base:1.6.1')
+            library('realm', 'io.realm.kotlin:library-base:1.7.0')
         }
         testLibs {
             library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0')
