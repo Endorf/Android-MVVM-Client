@@ -6,7 +6,7 @@
         <item name="boxCornerRadiusTopStart">@dimen/text_input_layout_side_corners</item>
         <item name="boxCornerRadiusTopEnd">@dimen/text_input_layout_side_corners</item>
         <item name="boxBackgroundMode">outline</item>
-        <item name="boxBackgroundColor">@color/bg_text_input_layout_color</item>
+        <item name="boxBackgroundColor">@android:color/transparent</item>
     </style>
 
     <style name="DefaultEmailEditText">

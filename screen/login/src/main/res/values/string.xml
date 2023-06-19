@@ -13,4 +13,8 @@
     <string name="note_creation_btn_title">Submit</string>
 
     <string name="menu_log_out_title">Log out</string>
+
+    <string name="login_title_hint">Authorization</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_button_title">Enter</string>
 </resources>

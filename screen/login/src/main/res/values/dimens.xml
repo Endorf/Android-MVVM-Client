@@ -9,4 +9,5 @@
 
     <dimen name="login_scr_margin">35dp</dimen>
     <dimen name="login_status_top_padding">4dp</dimen>
+    <dimen name="corners_login_box">8dp</dimen>
 </resources>

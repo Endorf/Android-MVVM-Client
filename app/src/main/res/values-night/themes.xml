@@ -1,12 +1,17 @@
 <resources>
     <style name="Theme.SharedNotes" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:navigationBarColor">#FF191C1D</item>
-        <item name="android:statusBarColor">#FF191C1D</item>
+        <item name="android:navigationBarColor">@color/colorPrimaryContainer</item>
+        <item name="android:statusBarColor">@color/colorPrimaryContainer</item>
         <item name="android:windowLightStatusBar">false</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">#FF191C1D</item>
+        <item name="windowSplashScreenBackground">@color/colorPrimaryContainer</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
         <item name="postSplashScreenTheme">@style/Theme.SharedNotes</item>
     </style>
