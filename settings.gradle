@@ -10,7 +10,7 @@ dependencyResolutionManagement {
         libs {
             library('core-ktx', 'androidx.core:core-ktx:1.10.1')
             library('androidx-appcompat', 'androidx.appcompat:appcompat:1.6.1')
-            library('material', 'com.google.android.material:material:1.8.0')
+            library('material', 'com.google.android.material:material:1.9.0')
             library('androidx-constraintlayout', 'androidx.constraintlayout:constraintlayout:2.1.4')
             library('androidx-navigation-fragment-ktx', 'androidx.navigation:navigation-fragment-ktx:2.5.3')
             library('androidx-fragment-ktx', 'androidx.fragment:fragment-ktx:1.6.0')
