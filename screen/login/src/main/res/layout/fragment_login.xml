@@ -15,70 +15,81 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/bg_login_radial"
         tools:context=".LoginFragment">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:animateLayoutChanges="true"
-            android:gravity="center"
-            android:padding="@dimen/login_scr_margin">
-
-            <TextView
-                android:id="@+id/title"
+            android:layout_gravity="center"
+            android:padding="@dimen/application_margin_default">
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
-                android:gravity="center_horizontal"
-                android:text="@string/app_name"
-                android:textColor="@color/purple_500"
-                android:textSize="40dp"
-                android:textStyle="italic"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailInputLayout"
-                style="@style/DefaultTextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:layout_marginBottom="5dp"
-                app:boxCornerRadiusBottomEnd="0dp"
-                app:boxCornerRadiusBottomStart="0dp"
-                app:endIconMode="custom"
-                app:error="@{viewModel.errorState.message}"
-                app:layout_constraintTop_toBottomOf="@+id/title">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailField"
-                    style="@style/DefaultEmailEditText"
+                android:layout_height="match_parent"
+                app:cardCornerRadius="@dimen/corners_login_box">
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:onDoneAction="@{() -> viewModel.login()}"
-                    android:enabled="@{!viewModel.inProgressState}"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:orientation="vertical"
+                    android:background="?colorPrimaryContainer"
+                    android:paddingBottom="50dp">
 
-            <com.google.android.material.progressindicator.LinearProgressIndicator
-                android:id="@+id/progressBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="161dp"
-                android:indeterminate="true"
-                android:visibility="@{viewModel.inProgressState ? View.VISIBLE : View.INVISIBLE}"
-                app:layout_constraintTop_toBottomOf="@+id/title"/>
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:indeterminateTint="@color/bg_login_status_color"
+                        android:indeterminate="true"
+                        android:paddingBottom="16dp"
+                        android:visibility="@{viewModel.inProgressState ? View.VISIBLE : View.INVISIBLE}"
+                        />
 
-            <Button
-                android:id="@+id/loginBtn"
-                style="@style/DefaultButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="200dp"
-                android:clickable="@{!viewModel.inProgressState}"
-                android:onClick="@{() -> viewModel.login()}"
-                android:text="@string/login_btn_title"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_title_hint"
+                        android:paddingBottom="25dp"
+                        style="@style/TextAppearance.Material3.TitleLarge"
+                        android:gravity="center"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/emailInputLayout"
+                        style="@style/DefaultTextInputLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/application_margin_default"
+                        android:layout_marginStart="@dimen/application_margin_default"
+                        app:boxCornerRadiusBottomEnd="0dp"
+                        app:boxCornerRadiusBottomStart="0dp"
+                        app:endIconMode="custom"
+                        app:startIconDrawable="@android:drawable/ic_dialog_email"
+                        app:errorEnabled="true"
+                        android:foregroundTint="?colorPrimary"
+                        app:error="@{viewModel.errorState.message}"
+                        app:layout_constraintTop_toBottomOf="@+id/title">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/emailField"
+                            style="@style/DefaultEmailEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:onDoneAction="@{() -> viewModel.login()}"
+                            android:enabled="@{!viewModel.inProgressState}"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/loginBtn"
+                        style="@style/DefaultButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/application_margin_default"
+                        android:layout_marginStart="@dimen/application_margin_default"
+                        android:clickable="@{!viewModel.inProgressState}"
+                        android:onClick="@{() -> viewModel.login()}"
+                        android:text="@string/login_button_title"
+                        app:layout_constraintTop_toBottomOf="@+id/title" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
     </androidx.core.widget.NestedScrollView>
-
 </layout>
