@@ -31,7 +31,7 @@ dependencyResolutionManagement {
             library('realm', 'io.realm.kotlin:library-base:1.9.1')
         }
         testLibs {
-            library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0')
+            library('detekt', 'io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.0')
 
             library('junit', 'junit:junit:4.13.2')
             library('androidx-junit-ext', 'androidx.test.ext:junit:1.1.5')
