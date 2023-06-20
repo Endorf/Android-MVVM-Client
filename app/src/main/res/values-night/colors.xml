@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#9BD8FFFF</color>
-    <color name="colorPrimaryContainer">#FF191C1D</color>
-    <color name="colorOnPrimary">#ff333333</color>
+    <color name="colorPrimaryContainer">#ff333333</color>
     <color name="colorSecondaryContainer">#ff333333</color>
+    <color name="windowSplashScreenBackground">#FF530005</color>
+    <color name="textColorPrimary">@color/colorPrimary</color>
+    <color name="colorOnPrimary">#fff</color>
+    <color name="colorOnSurface">@color/colorPrimary</color>
+    <color name="colorSecondary">#ffdc2430</color>
+    <color name="colorError">#ffdc2430</color>
+    <color name="colorOnError">#ffdc2430</color>
+    <color name="colorAccent">#ffffd89b</color>
 </resources>

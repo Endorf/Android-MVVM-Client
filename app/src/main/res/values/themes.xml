@@ -1,20 +1,25 @@
 <resources version="1.0" encoding="utf-8">
     <style name="Theme.SharedNotes" parent="Theme.MaterialComponents.NoActionBar">
-        <item name="android:navigationBarColor">@android:color/white</item>
-        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@color/windowSplashScreenBackground</item>
+        <item name="android:statusBarColor">@color/windowSplashScreenBackground</item>
         <item name="android:windowLightStatusBar">true</item>
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <item name="colorOnPrimary">@color/colorPrimaryContainer</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorOnSurface">@color/colorOnSurface</item>
         <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
         <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorError">@color/colorError</item>
+        <item name="colorOnError">@color/colorOnError</item>
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenBackground">@color/windowSplashScreenBackground</item>
+        <item name="android:windowBackground">@drawable/bg_login_radial</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
         <item name="postSplashScreenTheme">@style/Theme.SharedNotes</item>
     </style>
