@@ -6,5 +6,9 @@
     <color name="colorOnSurface">#000</color>
     <color name="textColorPrimary">#ff0c0c0c</color>
     <color name="colorSecondaryContainer">#ff333333</color>
-    <color name="colorSecondary">#fff</color>
+    <color name="colorSecondary">#ffdc2430</color>
+    <color name="windowSplashScreenBackground">#ffdc2430</color>
+    <color name="colorError">#ffdc2430</color>
+    <color name="colorOnError">#ffdc2430</color>
+    <color name="colorAccent">#ffffd89b</color>
 </resources>
