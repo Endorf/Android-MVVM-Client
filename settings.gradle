@@ -27,7 +27,7 @@ dependencyResolutionManagement {
             library('retrofit2-converter-gson', 'com.squareup.retrofit2:converter-gson:2.9.0')
         }
         storage {
-            library('kotlinx-coroutines-core', 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4')
+            library('kotlinx-coroutines-core', 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1')
             library('realm', 'io.realm.kotlin:library-base:1.9.1')
         }
         testLibs {
