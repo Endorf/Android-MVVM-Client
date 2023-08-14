@@ -14,7 +14,7 @@ dependencyResolutionManagement {
             library('androidx-constraintlayout', 'androidx.constraintlayout:constraintlayout:2.1.4')
             library('androidx-navigation-fragment-ktx', 'androidx.navigation:navigation-fragment-ktx:2.6.0')
             library('androidx-fragment-ktx', 'androidx.fragment:fragment-ktx:1.6.0')
-            library('androidx-navigation-ui-ktx', 'androidx.navigation:navigation-ui-ktx:2.5.3')
+            library('androidx-navigation-ui-ktx', 'androidx.navigation:navigation-ui-ktx:2.7.0')
             library('androidx-lifecycle-livedata-ktx', 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1')
             library('hilt', 'com.google.dagger:hilt-android:2.45')
             library('hilt-compiler', 'com.google.dagger:hilt-compiler:2.45')
